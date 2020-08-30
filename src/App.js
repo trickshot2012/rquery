@@ -1,24 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const queryString = require('query-string');
+  const parsed = queryString.parse(window.location.search);
+  let id=parsed["id"];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>How to get queryString</h1>  
+      <h4>add ID with parameter for e.g. ?id=12</h4>
+      <h3>id:{id}</h3>
     </div>
   );
 }
